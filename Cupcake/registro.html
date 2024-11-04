@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Cupcakes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        header {
+            text-align: center;
+        }
+        .logo {
+            width: 150px; /* Ajuste o tamanho da logo conforme necessário */
+        }
+        .container {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .button {
+            background-color: #ff69b4;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .button:hover {
+            background-color: #ff1493;
+        }
+        footer {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="logo.png" alt="Logo" class="logo"> <!-- Caminho da logo -->
+    <h1>Registro</h1>
+</header>
+
+<div class="container">
+    <form id="registerForm" onsubmit="return handleRegister(event)">
+        <input type="text" id="firstName" placeholder="Nome" required>
+        <input type="text" id="lastName" placeholder="Sobrenome" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Senha" required>
+        <input type="password" id="confirmPassword" placeholder="Confirme a Senha" required>
+        <button type="submit" class="button">Registrar</button>
+        <p>Já tem conta? <a href="index.html">Voltar ao Login</a></p> <!-- Link para voltar ao login -->
+    </form>
+</div>
+
+<footer>
+    <p>&copy; 2024 Cupcakes. Todos os direitos reservados.</p>
+</footer>
+
+<script>
+    function handleRegister(event) {
+        event.preventDefault();
+
+        // Obter valores dos campos
+        const firstName = document.getElementById('firstName').value;
+        const lastName = document.getElementById('lastName').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+
+        // Verificar se a senha e a confirmação da senha correspondem
+        if (password !== confirmPassword) {
+            alert('As senhas não coincidem. Por favor, tente novamente.');
+            return;
+        }
+
+        // Simulação de registro bem-sucedido
+        alert('Registro realizado com sucesso!');
+        window.location.href = 'index.html'; // Redireciona para a página de login
+    }
+</script>
+
+</body>
+</html>
